@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AsTa+</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    margin: 0;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 20px;
+    margin: 15px 0 10px;
+    color: #003366;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-banks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    display: block;
+    padding: 14px;
+    text-align: center;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.button:hover {
+    background-color: #005fa3;
+}
+
+.column {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.info {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>AsTa+</h1>
+
+<!-- PANKIT -->
+<div class="section-title">Pankit</div>
+<div class="grid-banks">
+
+<a class="button" href="https://www.op.fi">OP</a>
+<a class="button" href="https://www.nordea.fi">Nordea</a>
+<a class="button" href="https://www.danskebank.fi">Danske</a>
+<a class="button" href="https://www.saastopankki.fi">Säästöpankki</a>
+
+<a class="button" href="https://www.poppankki.fi">POP Pankki</a>
+<a class="button" href="https://www.omasp.fi">OmaSP</a>
+<a class="button" href="https://www.aktiapankki.fi">Aktia</a>
+<a class="button" href="https://www.spankki.fi">S-Pankki</a>
+
+</div>
+
+<!-- PALVELUT -->
+<div class="section-title">Palvelut</div>
+
+<div class="grid-2">
+
+<!-- TERVEYSPALVELUT -->
+<div class="column">
+<div class="section-title">Terveyspalvelut</div>
+
+<a class="button" href="https://www.kanta.fi/omakanta">OmaKanta</a>
+<a class="button" href="https://www.pshyvinvointialue.fi/omasavo">OmaSavo</a>
+<a class="button" href="https://www.kela.fi">Kela</a>
+<a class="button" href="https://www.islab.fi">Istek</a>
+
+</div>
+
+<!-- MUUT PALVELUT -->
+<div class="column">
+<div class="section-title">Muut palvelut</div>
+
+<a class="button" href="https://www.suomi.fi">Suomi.fi</a>
+<a class="button" href="https://www.vero.fi/omavero">OmaVero</a>
+<a class="button" href="https://poliisi.fi">Poliisi</a>
+
+</div>
+
+</div>
+
+<div class="info">
+AsTa+ – laajennettu asiointinäkymä
+</div>
+
+</div>
+
+</body>
+</html>
