@@ -1,133 +1,269 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AsTa+</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AsTa+ – AsiointiTabletti</title>
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
-    margin: 0;
-    padding: 10px;
-}
+  <style>
+    :root {
+      --bg: #eef1f4;
+      --card: #f8f8f8;
+      --text: #111111;
+      --subtext: #666666;
+      --blue: #3b6fd8;
+      --blue-hover: #2f5fc0;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --radius-card: 20px;
+      --radius-button: 18px;
+    }
 
-h1 {
-    text-align: center;
-    color: #003366;
-    margin-bottom: 10px;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.section-title {
-    font-size: 20px;
-    margin: 15px 0 10px;
-    color: #003366;
-    text-align: center;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-}
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px 24px 36px 24px;
+    }
 
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+    }
 
-.grid-banks {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
+    .logo {
+      width: 150px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
 
-.button {
-    display: block;
-    padding: 14px;
-    text-align: center;
-    background-color: #0077cc;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 18px;
-}
+    .title-block h1 {
+      margin: 0 0 6px 0;
+      font-size: 42px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
 
-.button:hover {
-    background-color: #005fa3;
-}
+    .title-block p {
+      margin: 0;
+      font-size: 24px;
+      color: var(--subtext);
+      line-height: 1.25;
+    }
 
-.column {
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-}
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: start;
+    }
 
-.info {
-    margin-top: 15px;
-    font-size: 14px;
-    text-align: center;
-    color: #555;
-}
-</style>
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 28px 34px 34px 34px;
+    }
 
+    .card h2 {
+      margin: 0 0 24px 0;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .bank-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 20px;
+    }
+
+    .service-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .columns-inside {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .column h3 {
+      margin: 0 0 18px 0;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #0b3a7a;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 70px;
+      padding: 12px 16px;
+      background: var(--blue);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: var(--radius-button);
+      font-size: 26px;
+      line-height: 1.2;
+      text-align: center;
+      transition: background 0.15s ease;
+    }
+
+    .button:hover {
+      background: var(--blue-hover);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 34px;
+      color: var(--subtext);
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 980px) {
+      .main-grid,
+      .columns-inside {
+        grid-template-columns: 1fr;
+      }
+
+      .title-block h1 {
+        font-size: 34px;
+      }
+
+      .title-block p {
+        font-size: 20px;
+      }
+
+      .button {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 16px;
+      }
+
+      .header {
+        gap: 14px;
+      }
+
+      .logo {
+        width: 120px;
+      }
+
+      .title-block {
+        text-align: center;
+      }
+
+      .title-block h1 {
+        font-size: 30px;
+      }
+
+      .title-block p {
+        font-size: 18px;
+      }
+
+      .bank-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px 18px 24px 18px;
+      }
+
+      .button {
+        min-height: 64px;
+        font-size: 22px;
+      }
+
+      .footer {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
 
-<div class="container">
+    <header class="header">
+      <img src="diki-logo.png" alt="DiKi logo" class="logo" />
+      <div class="title-block">
+        <h1>AsTa+ – AsiointiTabletti</h1>
+        <p>Laajemmat palvelut turvalliseen verkkoasiointiin</p>
+      </div>
+    </header>
 
-<h1>AsTa+</h1>
+    <main class="main-grid">
 
-<!-- PANKIT -->
-<div class="section-title">Pankit</div>
-<div class="grid-banks">
+      <section class="card">
+        <h2>Pankit</h2>
+        <div class="bank-grid">
+          <a class="button" href="https://www.op.fi">OP</a>
+          <a class="button" href="https://www.saastopankki.fi">Säästöpankki</a>
+          <a class="button" href="https://www.poppankki.fi">POP Pankki</a>
+          <a class="button" href="https://www.omasp.fi">OmaSP</a>
+          <a class="button" href="https://www.nordea.fi">Nordea</a>
+          <a class="button" href="https://www.aktia.fi">Aktia</a>
+          <a class="button" href="https://www.danskebank.fi">Danske Bank</a>
+          <a class="button" href="https://www.s-pankki.fi">S-Pankki</a>
+        </div>
+      </section>
 
-<a class="button" href="https://www.op.fi">OP</a>
-<a class="button" href="https://www.nordea.fi">Nordea</a>
-<a class="button" href="https://www.danskebank.fi">Danske</a>
-<a class="button" href="https://www.saastopankki.fi">Säästöpankki</a>
+      <section class="card">
+        <h2>Palvelut</h2>
+        <div class="columns-inside">
 
-<a class="button" href="https://www.poppankki.fi">POP Pankki</a>
-<a class="button" href="https://www.omasp.fi">OmaSP</a>
-<a class="button" href="https://www.aktiapankki.fi">Aktia</a>
-<a class="button" href="https://www.spankki.fi">S-Pankki</a>
+          <div class="column">
+            <h3>Terveyspalvelut</h3>
+            <div class="service-stack">
+              <a class="button" href="https://www.kanta.fi/omakanta">OmaKanta</a>
+              <a class="button" href="https://www.pshyvinvointialue.fi/omasavo">OmaSavo</a>
+              <a class="button" href="https://www.kela.fi">Kela</a>
+              <a class="button" href="https://www.islab.fi">Islab</a>
+            </div>
+          </div>
 
-</div>
+          <div class="column">
+            <h3>Muut palvelut</h3>
+            <div class="service-stack">
+              <a class="button" href="https://www.suomi.fi">Suomi.fi</a>
+              <a class="button" href="https://www.vero.fi/omavero">OmaVero</a>
+              <a class="button" href="https://poliisi.fi">Poliisi</a>
+            </div>
+          </div>
 
-<!-- PALVELUT -->
-<div class="section-title">Palvelut</div>
+        </div>
+      </section>
 
-<div class="grid-2">
+    </main>
 
-<!-- TERVEYSPALVELUT -->
-<div class="column">
-<div class="section-title">Terveyspalvelut</div>
+    <footer class="footer">
+      DiKi ry:n tukipalvelu<br />
+      tuki.diki2026@gmail.com
+    </footer>
 
-<a class="button" href="https://www.kanta.fi/omakanta">OmaKanta</a>
-<a class="button" href="https://www.pshyvinvointialue.fi/omasavo">OmaSavo</a>
-<a class="button" href="https://www.kela.fi">Kela</a>
-<a class="button" href="https://www.islab.fi">Istek</a>
-
-</div>
-
-<!-- MUUT PALVELUT -->
-<div class="column">
-<div class="section-title">Muut palvelut</div>
-
-<a class="button" href="https://www.suomi.fi">Suomi.fi</a>
-<a class="button" href="https://www.vero.fi/omavero">OmaVero</a>
-<a class="button" href="https://poliisi.fi">Poliisi</a>
-
-</div>
-
-</div>
-
-<div class="info">
-AsTa+ – laajennettu asiointinäkymä
-</div>
-
-</div>
-
+  </div>
 </body>
 </html>
